@@ -18,5 +18,8 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".number").style.width = "30 rem";
 
     document.querySelector(".message").textContent = "Correct Number!";
+    document.querySelector(".number").textContent = guess;
+    score++;
+    document.querySelector(".score").textContent = score;
   }
 });

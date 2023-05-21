@@ -5,3 +5,5 @@ let score = 20;
 let highScore = 0;
 
 console.log(secretNumber);
+
+document.querySelector(".check").addEventListener("click", function () {});

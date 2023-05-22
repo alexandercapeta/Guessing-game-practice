@@ -21,5 +21,12 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector(".number").textContent = guess;
     score++;
     document.querySelector(".score").textContent = score;
+  } else if (guess > secretNumber) {
+    // When the score is too high
+    if (score > 1) {
+      document.querySelector(".message").textContent = "Guess is Too High!";
+      score--;
+      document.querySelector(".score").textContent = score;
+    }
   }
 });

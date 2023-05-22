@@ -27,6 +27,9 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".message").textContent = "Guess is Too High!";
       score--;
       document.querySelector(".score").textContent = score;
+    } else {
+      document.querySelector(".message").textContent = "You lost the game.";
+      document.querySelector(".score").textContent = 0;
     }
   }
 });

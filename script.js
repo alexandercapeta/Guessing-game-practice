@@ -4,6 +4,11 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highScore = 0;
 
+// Presenting the message without repeating code.
+const displayMessage = function (message) {
+  document.querySelector(".message").textContent = message;
+};
+
 console.log(secretNumber);
 
 document.querySelector(".check").addEventListener("click", function () {
@@ -11,13 +16,13 @@ document.querySelector(".check").addEventListener("click", function () {
   const guess = document.querySelector(".guess").value;
 
   if (!guess) {
-    document.querySelector(".message").textContent = "No number!";
+    displayMessage("No number!");
   } else if (Number(guess) === secretNumber) {
     // When the player guesses the right number.
-    document.querySelector(".body").style.backgroundColor = "#60b347";
+    document.querySelector("body").style.backgroundColor = "#60b347";
     document.querySelector(".number").style.width = "30 rem";
 
-    document.querySelector(".message").textContent = "Correct Number!";
+    displayMessage("Correct Number!");
     document.querySelector(".number").textContent = guess;
     score++;
     document.querySelector(".score").textContent = score;
@@ -30,6 +35,9 @@ document.querySelector(".check").addEventListener("click", function () {
     displayMessage(guess > secretNumber ? "Too high!" : "Too low!");
     score--;
     document.querySelector(".score").textContent = score;
+  } else {
+    displayMessage("You lost the game!");
+    document.querySelector(".score").textContent = 0;
   }
   // } else if (guess > secretNumber) {
   //   // When the score is too high
